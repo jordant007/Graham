@@ -1,0 +1,261 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    overflow: hidden;
+}
+
+/* Main Navigation */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 64px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #5C6EFF;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Editor Navigation */
+.editor-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 5%;
+    background-color: white;
+    border-bottom: 1px solid #eee;
+    height: 56px;
+}
+
+.editor-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Button Styles */
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.btn-primary {
+    background-color: #5C6EFF;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #4555ff;
+    box-shadow: 0 2px 4px rgba(92,110,255,0.2);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #333;
+    border: none;
+}
+
+.btn-secondary:hover {
+    color: #5C6EFF;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.btn-outline:hover {
+    border-color: #5C6EFF;
+    color: #5C6EFF;
+}
+
+/* Editor Layout */
+.editor-container {
+    display: flex;
+    height: calc(100vh - 120px); /* Adjusted for both nav bars */
+}
+
+/* Rest of the CSS remains the same */
+.sidebar {
+    width: 300px;
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-right: 1px solid #eee;
+    overflow-y: auto;
+}
+
+.tool-section {
+    margin-bottom: 2rem;
+}
+
+.tool-section h3 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+/* Color Picker */
+.color-picker {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.color-swatch {
+    width: 100%;
+    padding-bottom: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    transition: transform 0.2s ease;
+}
+
+.color-swatch:hover {
+    transform: scale(1.1);
+}
+
+/* Template Options */
+.template-options {
+    display: grid;
+    gap: 1rem;
+}
+
+.template-thumbnail {
+    width: 100%;
+    height: 120px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.template-thumbnail:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.template-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tool Buttons */
+.tool-button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.tool-button:hover {
+    background-color: #f0f0f0;
+    border-color: #5C6EFF;
+    color: #5C6EFF;
+}
+
+/* Canvas Area */
+.canvas-area {
+    flex: 1;
+    background-color: #e9ecef;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.canvas-wrapper {
+    width: 600px;
+    height: 800px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .editor-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: 200px;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .canvas-area {
+        height: calc(100vh - 320px); /* Adjusted for mobile */
+    }
+
+    .canvas-wrapper {
+        width: 90%;
+        height: auto;
+        aspect-ratio: 3/4;
+    }
+}
